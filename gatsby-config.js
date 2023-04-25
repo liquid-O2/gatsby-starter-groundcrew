@@ -1,20 +1,29 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Groundcrew`,
+    description: `A Gatsby Starter Created By Groundcrew to speed up development`,
+    author: `@groundcrew`,
+    siteUrl: `https://groundcrew.com.au`,
   },
   plugins: [
+    // -- Uncomment the lines below when you want to integrate Google Analytics
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [process.env.GATSBY_GOOGLE_GTAG],
+    //     gtagConfig: {
+    //       anonymize_ip: true,
+    //       cookie_expires: 0,
+    //       send_page_view: true,
+    //     },
+    //     pluginConfig: {
+    //       head: true,
+    //       respectDNT: false,
+    //     },
+    //   },
+    // },
+
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,19 +34,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
+    `gatsby-plugin-sitemap`,
   ],
 }
